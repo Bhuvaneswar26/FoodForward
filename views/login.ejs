@@ -1,0 +1,34 @@
+<!-- including header -->
+
+<%- include('./partials/header.ejs') %>
+
+
+
+<!-- main and login form  start -->
+<section class="hero-section bg-light py-5"> <!-- Increase padding here -->
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="card text-dark shadow-lg rounded p-4">
+                    <h2 class="fw-bold mb-4 text-uppercase">Login or</h2>
+                    <form action="/login" method="post" class="mb-4">
+                        <div class="form-outline form-dark mb-3">
+                            <input type="email" id="typeEmailX" name="mail" class="form-control form-control-lg" placeholder="Email" />
+                        </div>
+                        <div class="form-outline form-dark mb-4">
+                            <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" placeholder="Password" />
+                        </div>
+                        <button class="btn btn-outline-dark btn-lg btn-block" type="submit">Login</button>
+                    </form>
+                    <p class="mb-0">Don't have an account? <a href="signup" class="text-dark-50 fw-bold">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- main and login form  end -->
+
+
+
+<!-- including footer -->
+<%- include('./partials/footer.ejs') %>
