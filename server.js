@@ -17,7 +17,11 @@ const connect = require('./db/dbconnection')
 const test = require('./routers/test') 
 const login = require('./routers/login')
 const homepage = require('./routers/homepage')
-
+const sellfood = require('./routers/sellfood');
+const buyfood = require('./routers/buyfood');
+const donatefood = require('./routers/donatefood');
+const decomposefood = require('./routers/decomposefood');
+const contact = require('./routers/contact');
 
 
 //dotenv config
@@ -90,6 +94,11 @@ app.get('/', (req, res) => {
 
 app.use("/",login)
 app.use("/homepage",homepage)
+app.use("/sellfood",sellfood)
+app.use("/buyfood",buyfood)
+app.use("/donatefood",donatefood)
+app.use("/decomposefood",decomposefood)
+app.use("/contact",contact)
 
 
 
