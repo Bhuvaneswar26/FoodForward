@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Product List - Online Store</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Add your other meta tags, CSS links, and JavaScript here -->
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0" >
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>FoodForward</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="/homepage" class="nav-item nav-link">Home</a>
+                    <a href="/buyfood" class="nav-item nav-link active">Buy</a>
+                    <a href="/sellfood" class="nav-item nav-link">Sell</a>
+                    <a href="/donatefood" class="nav-item nav-link">Donate</a>
+                    <a href="/decomposefood" class="nav-item nav-link">Decompose</a>
+                    <a href="/contact" class="nav-item nav-link">Contact Us</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile &nbsp;<img src="/img/profileicon.png" alt="">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="#">My Profile</a>
+                            <a class="dropdown-item" href="#">Address</a>
+                            <a class="dropdown-item" href="#">Activity</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Buyer Header Start -->
+        <div class="container-xxl py-5 bg-dark hero-header mb-5" style="background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(/img/bg-hero.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;" >
+            <div class="container my-5 py-1">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="display-6 text-white animated slideInLeft">Buy Food</h1>
+                        <p class="text-white animated slideInLeft mb-4 pb-2">Browse and buy delicious food items from sellers in your area.</p>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                        <img class="img-fluid" src="img/heroo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Buyer Header End -->
+
+        <!-- Product Listings Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row">
+                    <% for (let i = 0; i < product.length; i += 2) { %>
+                    <!-- Repeat this product card section for each product -->
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="row g-0">
+                                <!-- Product Image on the left -->
+                                <div class="col-md-4">
+                                    <img src="<%= product[i].itemimg %>" class="card-img" alt="Product Image">
+                                </div>
+                                <!-- Product Details in the middle -->
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%= product[i]._doc.itemname %></h5>
+                                        <p class="card-text"><strong>Price: <%= product[i]._doc.price %></strong></p>
+                                        <!-- Add Address Block -->
+                                        <p class="card-text"><strong>Address:<%= product[i]._doc.address %></strong></p>
+                                        <!-- Add Mobile Number Block with WhatsApp Icon -->
+                                        <p class="card-text"><strong>Mobile No:<%= product[i]._doc.mobileno %></strong></p>
+                                        <p class="card-text">Description:<%= product[i]._doc.itemdesc %></p>
+                                        <!-- WhatsApp button -->
+                                        <a href="https://wa.me/<%= product[i]._doc.mobileno  %>" class="btn btn-success btn-m"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% if (i + 1 < product.length) { %>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="row g-0">
+                                <!-- Product Image on the left -->
+                                <div class="col-md-4">
+                                    <img src="<%= product[i + 1].itemimg %>" class="card-img" alt="Product Image" >
+                                </div>
+                                <!-- Product Details in the middle -->
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%= product[i + 1]._doc.itemname %></h5>
+                                        <p class="card-text"><strong>Price: <%= product[i + 1]._doc.price %></strong></p>
+                                        <!-- Add Address Block -->
+                                        <p class="card-text"><strong>Address: <%= product[i + 1]._doc.address %></strong></p>
+                                        <!-- Add Mobile Number Block with WhatsApp Icon -->
+                                        <p class="card-text"><strong>Mobile No: <%= product[i + 1]._doc.mobileno %></strong></p>
+                                        <p class="card-text">Description :<%= product[i + 1]._doc.itemdesc %>
+                                            <br><br>
+                                        <!-- WhatsApp button -->
+                                        <a href="https://wa.me/<%= product[i + 1]._doc.mobileno %>" class="btn btn-success btn-m"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <!-- Repeat this product card section for each product -->
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <!-- Product Listings End -->
+
+        <!-- Footer (You can include a footer section if needed) -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2023 FoodForward. All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <!-- Add your JavaScript code here -->
+
+         <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </div>
+</body>
+</html>

@@ -8,6 +8,8 @@ const cookieparser = require('cookie-parser');
 const session = require('express-session');
 const mongosession = require('connect-mongodb-session')(session);
 const methodOverride = require('method-override');
+const pathh = require('path');
+
 
 
 
@@ -22,6 +24,12 @@ const buyfood = require('./routers/buyfood');
 const donatefood = require('./routers/donatefood');
 const decomposefood = require('./routers/decomposefood');
 const contact = require('./routers/contact');
+const adress = require("./routers/adress")
+const seller = require('./routers/seller')
+const buyer = require('./routers/buyer')
+const sellerdashboard = require('./routers/sellerdashboard')
+const updateproduct =  require('./routers/updateproduct')
+const deleteproduct = require('./routers/deleteproduct')
 
 
 //dotenv config
@@ -49,11 +57,19 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 
+app.use(cookieparser())
+
 //static files declaratipn
 app.use(express.static('public'))
+app.use('/uploads', express.static(pathh.join(__dirname, 'uploads')))
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(bodyparser.urlencoded({ extended: true }));
+
+// Parse JSON bodies (as sent by API clients)
+app.use(bodyparser.json());
 
 
 
@@ -99,6 +115,12 @@ app.use("/buyfood",buyfood)
 app.use("/donatefood",donatefood)
 app.use("/decomposefood",decomposefood)
 app.use("/contact",contact)
+app.use("/adress",adress)
+app.use('/seller',seller)
+app.use('/buyer',buyer)
+app.use('/sellerdashboard',sellerdashboard)
+app.use('/updateproduct',updateproduct)
+app.use('/deleteproduct',deleteproduct)
 
 
 

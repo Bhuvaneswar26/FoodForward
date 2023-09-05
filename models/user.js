@@ -17,6 +17,10 @@ const userschema = mongoose.Schema({
     createed: {
         type: Date,
         default: Date.now
+    },
+    adress:{
+        type:String,
+        require:true
     }
 })
 
