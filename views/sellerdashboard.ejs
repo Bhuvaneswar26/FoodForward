@@ -66,11 +66,10 @@
                                 Profile &nbsp;<img src="/img/profileicon.png" alt="">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="profileDropdown">
-                                <a class="dropdown-item" href="#">My Profile</a>
-                                <a class="dropdown-item" href="/adress">Adress</a>
+                                <a class="dropdown-item" href="/profile">My Profile</a>
                                 <a class="dropdown-item" href="/sellerdashboard">Activity</a>
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="/decomposefood">Settings</a>
+                                <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
                         </div>
                     </div>
@@ -94,6 +93,7 @@
         <!-- Product Listings Start -->
 <div class="container-xxl py-5" id="Dashboardstart">
     <div class="container">
+        <h3>Manage selling products</h3>
         <div class="row">
             <% for (let i = 0; i < products.length; i++) { %>
             <!-- Repeat this product card section for each product -->
@@ -118,7 +118,7 @@
                                 <!-- Update and Delete buttons for sellers -->
                                 <div class="mt-2">
                                     <a href="/updateproduct/<%= products[i]._id %>" class="btn btn-primary btn-sm">Update</a>
-                                    <a href="/deleteproduct/<%= products[i]._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="/deleteproduct/selling/<%= products[i]._id %>" class="btn btn-danger btn-sm">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -134,6 +134,143 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="container-xxl py-5" id="Dashboardstart">
+    <div class="container">
+        <h3>Manage small donation products</h3>
+        <div class="row">
+            <% for (let i = 0; i < product2.length; i++) { %>
+            <!-- Repeat this product card section for each product -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="row g-0">
+                        <!-- Product Image on the left -->
+                        <div class="col-md-4">
+                            <img src="uploads/<%= product2[i].itemimg.data %>" class="card-img" alt="Product Image">
+                        </div>
+                        <!-- Product Details in the middle -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product2[i].itemname %></h5>
+                                <p class="card-text"><strong>Price: <%= product2[i].price %></strong></p>
+                                <!-- Add Address Block -->
+                                <p class="card-text"><strong>Address: <%= product2[i].address %></strong></p>
+                                <!-- Add Mobile Number Block with WhatsApp Icon -->
+                                <p class="card-text"><strong>Mobile No: <%= product2[i].mobileno %></strong></p>
+                                <p class="card-text">Description: <%= product2[i].itemdesc %></p>
+                                <!-- WhatsApp button -->
+                                <!-- Update and Delete buttons for sellers -->
+                                <div class="mt-2">
+                                    <a href="/updateproduct2/smalldonation/<%= product2[i]._id %>" class="btn btn-primary btn-sm">Update</a>
+                                    <a href="/deleteproduct/smalldonation/<%= product2[i]._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Repeat this product card section for each product -->
+
+
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-xxl py-5" id="Dashboardstart">
+    <div class="container">
+        <h3>Manage large donation products</h3>
+        <div class="row">
+            <% for (let i = 0; i < product3.length; i++) { %>
+            <!-- Repeat this product card section for each product -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="row g-0">
+                        
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product3[i].itemname %></h5>
+                                <p class="card-text"><strong>Price: <%= product3[i].price %></strong></p>
+                                <!-- Add Address Block -->
+                                <p class="card-text"><strong>Address: <%= product3[i].address %></strong></p>
+                                <!-- Add Mobile Number Block with WhatsApp Icon -->
+                                <p class="card-text"><strong>Mobile No: <%= product3[i].mobileno %></strong></p>
+                                <p class="card-text">Description: <%= product3[i].itemdesc %></p>
+                                <!-- WhatsApp button -->
+                                <!-- Update and Delete buttons for sellers -->
+                                <div class="mt-2">
+                                    <a href="/updateproduct3/largedonation/<%= product3[i]._id %>" class="btn btn-primary btn-sm">Update</a>
+                                    <a href="/deleteproduct/largedonation/<%= product3[i]._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Repeat this product card section for each product -->
+
+
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-xxl py-5" id="Dashboardstart">
+    <div class="container">
+        <h3>Manage essentials donation products</h3>
+        <div class="row">
+            <% for (let i = 0; i < product4.length; i++) { %>
+            <!-- Repeat this product card section for each product -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="row g-0">
+                        <!-- Product Image on the left -->
+                        <div class="col-md-4">
+                            <img src="uploads/<%= product4[i].itemimg.data %>" class="card-img" alt="Product Image">
+                        </div>
+                        <!-- Product Details in the middle -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product4[i].itemname %></h5>
+                                <p class="card-text"><strong>Price: <%= product4[i].price %></strong></p>
+                                <!-- Add Address Block -->
+                                <p class="card-text"><strong>Address: <%= product4[i].address %></strong></p>
+                                <!-- Add Mobile Number Block with WhatsApp Icon -->
+                                <p class="card-text"><strong>Mobile No: <%= product4[i].mobileno %></strong></p>
+                                <p class="card-text">Description: <%= product4[i].itemdesc %></p>
+                                <!-- WhatsApp button -->
+                                <!-- Update and Delete buttons for sellers -->
+                                <div class="mt-2">
+                                    <a href="/updateproduct4/essentialdonation/<%= product4[i]._id %>" class="btn btn-primary btn-sm">Update</a>
+                                    <a href="/deleteproduct/essentialdonation/<%= product4[i]._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Repeat this product card section for each product -->
+
+
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+
 
         <!-- Product Listings End -->
 

@@ -1,27 +1,24 @@
-const sellingschema = require('../models/selling')
+const donateessentialsschema = require('../models/donateessentials')
 const multer = require('multer')
 
-let productid = 0;
 
-const seller = (req,res) =>{
-    res.render("seller",{cat:req.params.cat});
+const donateessentials = (req,res) =>{
+    res.render("desentials");
 }
 
 
-const sellerpost = async (req,res) =>{
+const donateessentialspost = async (req,res) =>{
+    console.log("hii i reached")
     try{
         if (req.file){
             const mail = req.session.usermail;
-            productid++;
-            const data = new sellingschema({
-                                itemid:productid,
+            const data = new donateessentialsschema({
                                 usermail:mail,
                                 itemname:req.body.itemname,
                                 itemdesc:req.body.itemdesc,
-                                price:req.body.productPrice,
                                 latitude:req.body.latitude,
                                 longitude:req.body.longitude,
-                                mobileno:req.body.whatsapp,
+                                mobileno:req.body.contact,
                                 address:req.body.address,
                                 adress:"const",
                                 itemimg: {
@@ -39,10 +36,10 @@ const sellerpost = async (req,res) =>{
             })
         }         
         console.log(req.body)
-        res.render("seller",{cat:req.params.cat});        
+        res.render("desentials");        
     }                 
     catch(err){
     console.log(err)
     }
     }
-module.exports = {seller,sellerpost};
+module.exports = {donateessentials,donateessentialspost};

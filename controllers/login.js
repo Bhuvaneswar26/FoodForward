@@ -14,7 +14,7 @@ const loginverify = async (req, res) => {
         const user = await usermodel.findOne({ mail: maill });
 
       if (!user || user.password !== password) {
-          res.render('login');
+          res.redirect('login');
         } else {
             req.session.isAuth = true;
             req.session.usermail = maill;

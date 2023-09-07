@@ -16,7 +16,6 @@ const pathh = require('path');
 
 // user-defined imports
 const connect = require('./db/dbconnection')
-const test = require('./routers/test') 
 const login = require('./routers/login')
 const homepage = require('./routers/homepage')
 const sellfood = require('./routers/sellfood');
@@ -24,12 +23,18 @@ const buyfood = require('./routers/buyfood');
 const donatefood = require('./routers/donatefood');
 const decomposefood = require('./routers/decomposefood');
 const contact = require('./routers/contact');
-const adress = require("./routers/adress")
 const seller = require('./routers/seller')
 const buyer = require('./routers/buyer')
 const sellerdashboard = require('./routers/sellerdashboard')
 const updateproduct =  require('./routers/updateproduct')
+const updateproduct2 =  require('./routers/updateproduct2')
+const updateproduct3 =  require('./routers/updateproduct3')
+const updateproduct4 =  require('./routers/updateproduct4')
 const deleteproduct = require('./routers/deleteproduct')
+const donatesmall = require('./routers/donatesmall')
+const donateessentials = require('./routers/donateessentials')
+const accessmeals = require('./routers/accessmeals')
+const profile = require('./routers/profile')
 
 
 //dotenv config
@@ -65,11 +70,10 @@ app.use('/uploads', express.static(pathh.join(__dirname, 'uploads')))
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-// Parse JSON bodies (as sent by API clients)
-app.use(bodyparser.json());
+
 
 
 
@@ -93,7 +97,7 @@ app.use(session({
 }))
 const isAuth = (req, res, next) => {
   if (req.session && req.session.isAuth) {
-    res.redirect('/dashboard');
+    next()
   } else {
     if (req.url !== '/login') {
       res.redirect('/login');
@@ -109,20 +113,24 @@ app.get('/', (req, res) => {
 
 
 app.use("/",login)
-app.use("/homepage",homepage)
-app.use("/sellfood",sellfood)
-app.use("/buyfood",buyfood)
-app.use("/donatefood",donatefood)
-app.use("/decomposefood",decomposefood)
-app.use("/contact",contact)
-app.use("/adress",adress)
-app.use('/seller',seller)
-app.use('/buyer',buyer)
-app.use('/sellerdashboard',sellerdashboard)
-app.use('/updateproduct',updateproduct)
-app.use('/deleteproduct',deleteproduct)
-
-
+app.use("/homepage",isAuth,homepage)
+app.use("/sellfood",isAuth,sellfood)
+app.use("/buyfood",isAuth,buyfood)
+app.use("/donatefood",isAuth,donatefood)
+app.use("/decomposefood",isAuth,decomposefood)
+app.use("/contact",isAuth,contact)
+app.use('/seller',isAuth,seller)
+app.use('/buyer',isAuth,buyer)
+app.use('/sellerdashboard',isAuth,sellerdashboard)
+app.use('/updateproduct',isAuth,updateproduct)
+app.use('/updateproduct2',isAuth,updateproduct2)
+app.use('/updateproduct3',isAuth,updateproduct3)
+app.use('/updateproduct4',isAuth,updateproduct4)
+app.use('/deleteproduct',isAuth,deleteproduct)
+app.use('/donatesmall',isAuth,donatesmall)
+app.use('/donateessentials',isAuth,donateessentials)
+app.use('/accessmeals',accessmeals)
+app.use('/profile',profile)
 
 
 app.listen(path,(err)=>{

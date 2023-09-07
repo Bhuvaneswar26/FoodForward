@@ -1,9 +1,9 @@
 const express = require('express');
-const adress = require('../controllers/adress');
+const profile= require('../controllers/profile');
 
 const router = express.Router();
 
-router.use('/',adress);
+router.get('/',profile);
 
 
 module.exports = router

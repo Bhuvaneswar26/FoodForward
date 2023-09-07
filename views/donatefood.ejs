@@ -1,6 +1,5 @@
 <%- include('./partials/header.ejs', { first: "Home", second: "donate" }) %>
 
-
 <!-- Sell Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -10,50 +9,56 @@
         </div>
         <div class="row g-4">
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fas fa-utensils fa-3x text-primary mb-4"></i>
-                        <h5>Access Meals</h5>
-                        <p>Benefit from access to delicious and ready-to-eat meals provided for those in need.</p>
+                <a href="" id="accessmealsid"> <!-- Add a link to the Access Meals page -->
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fas fa-utensils fa-3x text-primary mb-4"></i>
+                            <h5>Access Meals</h5>
+                            <p>Benefit from access to delicious and ready-to-eat meals provided for those in need.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fas fa-hands-helping fa-3x text-primary mb-4"></i>
-                        <h5>Donate Small</h5>
-                        <p>Contribute a small donation to support the provision of fresh and nutritious meals.</p>
+                <a href="/donatesmall"> <!-- Add a link to the Donate Small page -->
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fas fa-hands-helping fa-3x text-primary mb-4"></i>
+                            <h5>Donate Small</h5>
+                            <p>Contribute a small donation to support the provision of fresh and nutritious meals.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fas fa-heart fa-3x text-primary mb-4"></i>
-                        <h5>Donate Generously</h5>
-                        <p>Make a larger donation to positively impact families and communities in need.</p>
+                <a href="#donategenerously"> <!-- Add a link to the Donate Generously page -->
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fas fa-heart fa-3x text-primary mb-4"></i>
+                            <h5>Donate Generously</h5>
+                            <p>Make a larger donation to positively impact families and communities in need.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fas fa-box-open fa-3x text-primary mb-4"></i>
-                        <h5>Essential Contributions</h5>
-                        <p>Support those in need by donating essential items like groceries and daily necessities.</p>
+                <a href="/donateessentials"> <!-- Add a link to the Essential Contributions page -->
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fas fa-box-open fa-3x text-primary mb-4"></i>
+                            <h5>Essential Contributions</h5>
+                            <p>Support those in need by donating essential items like groceries and daily necessities.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
 
 
-
-
 <!-- donate large Start -->
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s" id="donategenerously">
             <div class="row g-0">
                 <div class="col-md-6">
                     <div>
@@ -64,49 +69,57 @@
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Donate</h5>
                         <h1 class="text-white mb-4">Donate Generously</h1>
-                        <form>
+                        <form action="/donatefood" method="post"  >
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                    <div class="form-floating date" id="datePicker" data-target-input="nearest">
+                                        <input type="date" class="form-control datetimepicker-input" id="date" name="date" placeholder="Date & Time" data-target="#datePicker" data-toggle="datetimepicker" />
+                                        <label for="date">Date & Time</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control datetimepicker-input" id="noofpeople" placeholder="No of People" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="noofpeople">No of people</label>
-                                      </div>
+                                        <input type="time" class="form-control datetimepicker-input" id="time" name="time" placeholder="Event Time" data-target="#datePicker" data-toggle="datetimepicker" />
+                                        <label for="time">Event Time</label>
+                                    </div>
                                 </div>
+                                <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control datetimepicker-input" id="contact" name="contact" placeholder="Mobile No" data-target="#datePicker" data-toggle="datetimepicker" />
+                                    <label for="contact">Mobile No</label>
+                                </div>
+                            </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="adress" id="adress" style="height: 100px"></textarea>
-                                        <label for="adress">Adress</label>
+                                        <textarea class="form-control" placeholder="address" id="address" name="eventAddress" style="height: 100px"></textarea>
+                                        <label for="address">Event Address</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="description" id="description" style="height: 100px"></textarea>
-                                        <label for="description">Description</label>
+                                        <textarea class="form-control" placeholder="Event Description" id="desc" name="desc" style="height: 100px"></textarea>
+                                        <label for="desc">Event Description</label>
                                     </div>
                                 </div>
+                                
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Send Invitation</button>
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
@@ -130,6 +143,25 @@
             </div>
         </div>
         <!-- donate Start -->
+
+
+        <script>
+            // Get user's current coordinates
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    console.log(latitude,longitude)
+                    // Update the href attribute of the vegetables link
+                    const vegetablesLink = document.getElementById("accessmealsid");
+                    vegetablesLink.href = `/accessmeals/${latitude}/${longitude}`;
+        
+                    // Update the href attribute of the fruits link
+                    
+                });
+            }
+        </script>
+        
 
 
 

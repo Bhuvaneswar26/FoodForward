@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs', { first: "Home", second: "profile" }) %>
+
+<body>
+    <div class="container">
+        <div class="profile-container">
+            <h1 class="profile-title"><i class="fas fa-user"></i> User Profile</h1>
+            <div class="profile-details">
+                <div class="profile-info">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>Name:</h2>
+                    <p><%= data[0].name %></p>
+                </div>
+                <div class="profile-info">
+                    <i class="fas fa-envelope"></i>
+                    <h2>Email:</h2>
+                    <p><%= data[0].mail %></p>
+                </div>
+                <div class="profile-info">
+                    <i class="fas fa-lock"></i>
+                    <h2>Password:</h2>
+                    <p><%= data[0].password %></p>
+                </div>
+                <div class="profile-info">
+                    <i class="far fa-calendar"></i>
+                    <h2>Account Created:</h2>
+                    <p><%= data[0].createed %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include your JavaScript files here if needed -->
+</body>
+
+<%- include('./partials/footer.ejs') %>
