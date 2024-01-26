@@ -43,7 +43,7 @@ const app = express();
 //dbconnect
 connect(dburl);
 
-//template engine set up
+//template engine set  up
 app.set("view engine", "ejs");
 app.set("views", "views");
 
