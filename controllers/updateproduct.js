@@ -55,7 +55,7 @@ const patchupdateproduct = async (req, res) => {
         // Check if a new image file was uploaded
         if (req.file) {
             // Handle the file upload and update the image path in the database
-            updatedData.itemimg = {
+            updatedData.itemimg = { 
                 data: req.file.filename,
                 contenttype: "image/jpg/png",
                 } // Assuming you store the file path in your database
