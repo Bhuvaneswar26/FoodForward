@@ -49,7 +49,7 @@ app.set("views", "views");
 
 app.use(cookieparser());
 
-//static files declaratipn
+//static files declaration
 app.use(express.static("public"));
 app.use("/uploads", express.static(pathh.join(__dirname, "uploads")));
 app.use(methodOverride("_method"));
