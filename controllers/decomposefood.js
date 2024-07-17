@@ -2,7 +2,7 @@ const decomposelargeschema = require("../models/decomposeLarge");
 
 const decomposefood = async (req, res) => {
   try {
-    // Fetch all decomposed entries
+    // Fetch all decomposed  entries
     const decomposeEntries = await decomposelargeschema.find();
     res.render("decomposefood", { decomposeEntries });
   } catch (error) {
