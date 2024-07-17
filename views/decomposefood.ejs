@@ -1,65 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodForward</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="/img/donateicon.png" rel="icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            background-color: #FEA116;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-        }
-        .icon {
-            color: #f6f6f6;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #000000;
-        }
-        .go-home-button {
-            margin-top: 20px;
-        }
-        .go-home-button a {
-            background-color: #f6f6f6;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #000000;
-            font-weight: bold;
-        }
-        .go-home-button a i {
-            margin-right: 5px;
-        }
-    </style>
-    <title>Under Maintenance</title>
-</head>
-<body>
-    <div class="container">
-        <div class="icon fa-5x animate__animated animate__fadeIn animate__delay-1s">
-            <i class="fas fa-tools"></i>
-        </div>
-        <h1 class="animate__animated animate__fadeInDown">Sorry for the Inconvenience</h1>
-        <p class="animate__animated animate__fadeInUp">We are currently working on this feature and will be back with it soon.</p>
-        <div class="go-home-button" style="padding-top: 2rem; border-radius: 3rem;">
-            <a href="/homepage">
-                <i class="fas fa-home"></i> Go Home
-            </a>
-        </div>
+<%- include('./partials/header.ejs', { first: "Home", second: "decompose" }) %>
+
+<!-- Decompose Section Start -->
+<div class="container-xxl py-5 decompose-section">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h5 class="section-title ff-secondary text-center text-primary fw-normal">
+        Our Services
+      </h5>
+      <h1 class="mb-5">Decompose Spoiled Food</h1>
     </div>
-</body>
-</html>
+    <div class="row g-4">
+      <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+        <a href="" id="decomposefoodid">
+          <!-- Add a link to the Decompose Food page -->
+          <div class="service-item rounded pt-3">
+            <div class="p-4">
+              <i class="fas fa-recycle fa-3x text-primary mb-4"></i>
+              <h5>Decompose Food</h5>
+              <p>
+                Help farmers by providing spoiled food that can be used for
+                composting and other agricultural purposes. Composting is an
+                eco-friendly way to recycle organic waste, turning it into rich
+                soil amendments that improve soil health and fertility. By
+                decomposing spoiled food, we can reduce the amount of waste sent
+                to landfills, lower greenhouse gas emissions, and support
+                sustainable agricultural practices. Farmers benefit from the
+                nutrient-rich compost, which enhances crop growth and yields,
+                leading to more sustainable food production systems. Your
+                participation in this initiative contributes to a healthier
+                environment and promotes sustainable living.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom CSS for Wider Section -->
+<style>
+  .decompose-section .container {
+    max-width: 100%;
+  }
+  .decompose-section .row {
+    margin-bottom: 30px;
+  }
+</style>
+
+<!-- Decompose Form Start -->
+<div
+  class="container-xxl py-5 px-0 wow fadeInUp"
+  data-wow-delay="0.1s"
+  id="decomposefoodform"
+>
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="mb-4">
+        <img
+          src="https://www.shutterstock.com/image-photo/compost-composted-soil-cycle-composting-600nw-1431477179.jpg"
+          alt="Decompose Image"
+          class="img-fluid rounded"
+        />
+      </div>
+      <div>
+        <img
+          src="img/donateimg.png"
+          alt="Decompose Image"
+          class="img-fluid rounded"
+        />
+      </div>
+    </div>
+    <div class="col-md-6 bg-dark d-flex align-items-center">
+      <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+        <h5
+          class="section-title ff-secondary text-start text-primary fw-normal"
+        >
+          Decompose
+        </h5>
+        <h1 class="text-white mb-4">Provide Spoiled Food</h1>
+        <form action="/decomposefood" method="post">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="organizerName"
+                  name="organizerName"
+                  placeholder="Organizer Name"
+                  required
+                />
+                <label for="organizerName">Organizer Name</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="date"
+                  name="date"
+                  placeholder="Date & Time"
+                  required
+                />
+                <label for="date">Date & Time</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="time"
+                  class="form-control"
+                  id="time"
+                  name="time"
+                  placeholder="Event Time"
+                  required
+                />
+                <label for="time">Event Time</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="contact"
+                  name="contact"
+                  placeholder="Mobile No"
+                  required
+                />
+                <label for="contact">Mobile No</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Event Address"
+                  id="address"
+                  name="eventAddress"
+                  style="height: 100px"
+                  required
+                ></textarea>
+                <label for="address">Event Address</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Event Description"
+                  id="desc"
+                  name="desc"
+                  style="height: 100px"
+                  required
+                ></textarea>
+                <label for="desc">Event Description</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <select
+                  class="form-control"
+                  id="foodType"
+                  name="foodType"
+                  required
+                >
+                  <option value="">Select Food Type</option>
+                  <option value="veg">Vegetable Waste</option>
+                  <option value="non-veg">Non-Vegetable Waste</option>
+                  <option value="both(veg&nonveg)">Both</option>
+                </select>
+                <label for="foodType">Food Type</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Details of Food Waste"
+                  id="foodDetails"
+                  name="foodDetails"
+                  style="height: 100px"
+                  required
+                ></textarea>
+                <label for="foodDetails">Details of Food Waste</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary w-100 py-3" type="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Registered Spoiled Food Details Start -->
+<div class="container-xxl py-5 decompose-section">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h5 class="section-title ff-secondary text-center text-primary fw-normal">
+        Registered Spoiled Food Details
+      </h5>
+      <h1 class="mb-5">Recent Entries</h1>
+    </div>
+    <div class="row g-4">
+      <% if (decomposeEntries && decomposeEntries.length > 0) { %> <%
+      decomposeEntries.forEach(entry => { %>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item rounded pt-3">
+          <div class="p-4">
+            <h5>Organizer Name: <%= entry.organizerName %></h5>
+            <p>Email: <%= entry.email %></p>
+            <p>Contact: <%= entry.contact %></p>
+            <p>Address: <%= entry.eventAddress %></p>
+            <p>Description: <%= entry.desc %></p>
+            <p>Date: <%= entry.date %></p>
+            <p>Time: <%= entry.time %></p>
+            <p>Food Type: <%= entry.foodType %></p>
+          </div>
+        </div>
+      </div>
+      <% }); %> <% } else { %>
+      <div class="col-12">
+        <p>No entries found.</p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+<!-- Registered Spoiled Food Details End -->
+
+<%- include('./partials/footer.ejs') %>

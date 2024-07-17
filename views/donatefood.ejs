@@ -1,169 +1,258 @@
 <%- include('./partials/header.ejs', { first: "Home", second: "donate" }) %>
 
-<!-- Sell Start -->
+<!-- Donate Generously Section Start -->
 <div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Our Services</h5>
-            <h1 class="mb-5">Donate and Access Food</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a href="" id="accessmealsid"> <!-- Add a link to the Access Meals page -->
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fas fa-utensils fa-3x text-primary mb-4"></i>
-                            <h5>Access Meals</h5>
-                            <p>Benefit from access to delicious and ready-to-eat meals provided for those in need.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <a href="/donatesmall"> <!-- Add a link to the Donate Small page -->
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fas fa-hands-helping fa-3x text-primary mb-4"></i>
-                            <h5>Donate Small</h5>
-                            <p>Contribute a small donation to support the provision of fresh and nutritious meals.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <a href="#donategenerously"> <!-- Add a link to the Donate Generously page -->
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fas fa-heart fa-3x text-primary mb-4"></i>
-                            <h5>Donate Generously</h5>
-                            <p>Make a larger donation to positively impact families and communities in need.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <a href="/donateessentials"> <!-- Add a link to the Essential Contributions page -->
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fas fa-box-open fa-3x text-primary mb-4"></i>
-                            <h5>Essential Contributions</h5>
-                            <p>Support those in need by donating essential items like groceries and daily necessities.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h5 class="section-title ff-secondary text-center text-primary fw-normal">
+        Our Services
+      </h5>
+      <h1 class="mb-5">Donate Generously</h1>
     </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+        <a href="" id="accessmealsid">
+          <!-- Add a link to the Access Meals page -->
+          <div class="service-item rounded pt-3">
+            <div class="p-4">
+              <i class="fas fa-utensils fa-3x text-primary mb-4"></i>
+              <h5>Access Meals</h5>
+              <p>
+                Benefit from access to delicious and ready-to-eat meals provided
+                for those in need.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+        <a href="/donatesmall">
+          <!-- Add a link to the Donate Small page -->
+          <div class="service-item rounded pt-3">
+            <div class="p-4">
+              <i class="fas fa-hands-helping fa-3x text-primary mb-4"></i>
+              <h5>Donate Small</h5>
+              <p>
+                Contribute a small donation to support the provision of fresh
+                and nutritious meals.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+        <a href="#donategenerously">
+          <!-- Add a link to the Donate Generously page -->
+          <div class="service-item rounded pt-3">
+            <div class="p-4">
+              <i class="fas fa-heart fa-3x text-primary mb-4"></i>
+              <h5>Donate Generously</h5>
+              <p>
+                Make a larger donation to positively impact families and
+                communities in need.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+        <a href="/donateessentials">
+          <!-- Add a link to the Essential Contributions page -->
+          <div class="service-item rounded pt-3">
+            <div class="p-4">
+              <i class="fas fa-box-open fa-3x text-primary mb-4"></i>
+              <h5>Essential Contributions</h5>
+              <p>
+                Support those in need by donating essential items like groceries
+                and daily necessities.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<!-- donate large Start -->
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s" id="donategenerously">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div>
-                    <img src="img/donateimg.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Donate</h5>
-                        <h1 class="text-white mb-4">Donate Generously</h1>
-                        <form action="/donatefood" method="post"  >
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="datePicker" data-target-input="nearest">
-                                        <input type="date" class="form-control datetimepicker-input" id="date" name="date" placeholder="Date & Time" data-target="#datePicker" data-toggle="datetimepicker" />
-                                        <label for="date">Date & Time</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="time" class="form-control datetimepicker-input" id="time" name="time" placeholder="Event Time" data-target="#datePicker" data-toggle="datetimepicker" />
-                                        <label for="time">Event Time</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control datetimepicker-input" id="contact" name="contact" placeholder="Mobile No" data-target="#datePicker" data-toggle="datetimepicker" />
-                                    <label for="contact">Mobile No</label>
-                                </div>
-                            </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="address" id="address" name="eventAddress" style="height: 100px"></textarea>
-                                        <label for="address">Event Address</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Event Description" id="desc" name="desc" style="height: 100px"></textarea>
-                                        <label for="desc">Event Description</label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Invitation</button>
-                                </div>
-                            </div>
-                        </form>
-                        
-                    </div>
-                </div>
+<!-- Donate Generously Form Start -->
+<div
+  class="container-xxl py-5 px-0 wow fadeInUp"
+  data-wow-delay="0.1s"
+  id="donategenerously"
+>
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div>
+        <img src="img/donateimg.png" alt="" />
+      </div>
+    </div>
+    <div class="col-md-6 bg-dark d-flex align-items-center">
+      <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+        <h5
+          class="section-title ff-secondary text-start text-primary fw-normal"
+        >
+          Donate
+        </h5>
+        <h1 class="text-white mb-4">Donate Generously</h1>
+        <form action="/donatefood" method="post">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <label for="name">Your Name</label>
+              </div>
             </div>
-        </div>
-
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        16:9 aspect ratio
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <label for="email">Your Email</label>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div
+                class="form-floating date"
+                id="datePicker"
+                data-target-input="nearest"
+              >
+                <input
+                  type="date"
+                  class="form-control datetimepicker-input"
+                  id="date"
+                  name="date"
+                  placeholder="Date & Time"
+                  data-target="#datePicker"
+                  data-toggle="datetimepicker"
+                  required
+                />
+                <label for="date">Date & Time</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="time"
+                  class="form-control datetimepicker-input"
+                  id="time"
+                  name="time"
+                  placeholder="Event Time"
+                  data-target="#datePicker"
+                  data-toggle="datetimepicker"
+                  required
+                />
+                <label for="time">Event Time</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating">
+                <input
+                  type="number"
+                  class="form-control datetimepicker-input"
+                  id="contact"
+                  name="contact"
+                  placeholder="Mobile No"
+                  data-target="#datePicker"
+                  data-toggle="datetimepicker"
+                  required
+                />
+                <label for="contact">Mobile No</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Event Address"
+                  id="address"
+                  name="eventAddress"
+                  style="height: 100px"
+                  required
+                ></textarea>
+                <label for="address">Event Address</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Event Description"
+                  id="desc"
+                  name="desc"
+                  style="height: 100px"
+                  required
+                ></textarea>
+                <label for="desc">Event Description</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary w-100 py-3" type="submit">
+                Send Invitation
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-xxl py-5 decompose-section">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h5 class="section-title ff-secondary text-center text-primary fw-normal">
+        Donated Food Details
+      </h5>
+      <h1 class="mb-5">Recent Donations</h1>
+    </div>
+    <div class="row g-4">
+      <% if (donateEntries && donateEntries.length > 0) { %> <%
+      donateEntries.forEach(entry => { %>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item rounded pt-3">
+          <div class="p-4">
+            <h5>Donor Name: <%= entry.name %></h5>
+            <p>Email: <%= entry.usermail %></p>
+            <p>Contact: <%= entry.mobileno %></p>
+            <p>Event Address: <%= entry.address %></p>
+            <p>Event Description: <%= entry.desc %></p>
+            <p>Date: <%= entry.date %></p>
+            <p>Time: <%= entry.time %></p>
+          </div>
         </div>
-        <!-- donate Start -->
+      </div>
+      <% }); %> <% } else { %>
+      <div class="col-12">
+        <p>No donations found.</p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
 
-
-        <script>
-            // Get user's current coordinates
-            if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    console.log(latitude,longitude)
-                    // Update the href attribute of the vegetables link
-                    const vegetablesLink = document.getElementById("accessmealsid");
-                    vegetablesLink.href = `/accessmeals/${latitude}/${longitude}`;
-        
-                    // Update the href attribute of the fruits link
-                    
-                });
-            }
-        </script>
-        
-
-
-
+<script>
+  // Get user's current coordinates
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      console.log(latitude, longitude);
+      // Update the href attribute of the vegetables link
+      const vegetablesLink = document.getElementById("accessmealsid");
+      vegetablesLink.href = `/accessmeals/${latitude}/${longitude}`;
+    });
+  }
+</script>
 
 <%- include('./partials/footer.ejs') %>

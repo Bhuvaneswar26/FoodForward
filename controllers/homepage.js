@@ -1,5 +1,5 @@
-const homepage = (req,res) =>{
-    res.render("homepage")
-}
+const homepage = (req, res) => {
+  res.render("homepage");
+};
 
 module.exports = homepage;

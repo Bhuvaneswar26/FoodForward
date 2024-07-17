@@ -1,9 +1,12 @@
-const express = require('express');
-const decomposefood = require('../controllers/decomposefood');
+const express = require("express");
+const {
+  decomposefood,
+  decomposelargefood,
+} = require("../controllers/decomposefood");
 
 const router = express.Router();
 
-router.use('/',decomposefood);
+router.get("/", decomposefood);
+router.post("/", decomposelargefood);
 
-
-module.exports = router
+module.exports = router;
